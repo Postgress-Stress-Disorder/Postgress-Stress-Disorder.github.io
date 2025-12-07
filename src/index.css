@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: "#0c0f15"; /*  near-black, slight blue */
+  --color-panel: "#131922"; /* darker blue-grey */
+  --color-steel: "#344759"; /* elephant shadow tone */
+  --color-ash: "#dee3ea"; /* smoke, highlights */
+
+  --color-terminal: #0d1117;
+  --color-bar: #131922;
+  --color-dim: #1a2733;
+
+  --color-neon-main: #29e6ff; /* brain / cables highlight */
+  --color-neon-200: #29e6ff20;
+  --color-neon-400: #29e6ff40;
+  --color-neon-600: #29e6ff60;
+  --color-neon-800: #29e6ff80;
+
+  --color-blood: #ff2a4f; /* red terminals */
+  --color-blood-300: #ff2a4f30;
+  --color-blood-600: #ff2a4f60;
+  --color-blood-900: #ff2a4f90;
+
+  --color-steel-border: #344759;
+
+  --color-green-main: #6cff7a;
+  --color-green-200: #6cff7a20;
+  --color-green-400: #6cff7a40;
+  --color-green-600: #6cff7a60;
+  --color-green-800: #6cff7a80;
+}
+
+#root {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Slight CRT bloom */
+.crt-bloom {
+  filter: drop-shadow(0 0 6px var(--green-main)) drop-shadow(0 0 12px var(--green-main));
+  animation: crtPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes crtPulse {
+  0% {
+    filter: drop-shadow(0 0 4px var(--green-main)) drop-shadow(0 0 8px var(--green-main));
+  }
+  50% {
+    filter: drop-shadow(0 0 7px var(--green-main)) drop-shadow(0 0 15px var(--green-main));
+  }
+  100% {
+    filter: drop-shadow(0 0 4px var(--green-main)) drop-shadow(0 0 8px var(--green-main));
+  }
+}
