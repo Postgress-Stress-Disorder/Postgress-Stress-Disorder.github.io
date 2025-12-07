@@ -1,8 +1,7 @@
 import Header from "./components/sections/UI/Header";
-
 import Divider from "./components/sections/Divider/Divider";
 import TerminalSection from "./components/sections/TerminalSection/TerminalSection";
-
+import TerminalNav from "./components/sections/TerminalNav/TerminalNav";
 function App() {
   return (
     <>
@@ -20,6 +19,12 @@ function App() {
         relationship with relational databases. We build things because nobody can stop us, and
         because therapy is expensive. Corporate best-practices are observed only as an
         archaeological curiosity.
+        <p>
+          <span className="text-blood">❯</span> We chase bizarre ideas, half-finished prototypes,
+          weird tech stacks, and the kind of “learning experiences” that ruin weekends. If a project
+          survives long enough to run, that’s a win. If it crashes in a way that teaches us
+          something, also a win. If it takes out prod? Well… that’s character development.
+        </p>
       </TerminalSection>
       <Divider
         query="SELECT mission FROM dev_collective WHERE meaning IS NOT NULL;"
@@ -138,6 +143,15 @@ function App() {
           </li>
         </ul>
       </TerminalSection>
+      <Divider
+        query="SELECT link FROM navigation WHERE accessible = TRUE;"
+        error={{
+          code: "no_matching_rows",
+          detail: "navigation requires manual discovery",
+          hint: "try scanning for repositories",
+        }}
+      />
+      <TerminalNav />
     </>
   );
 }
